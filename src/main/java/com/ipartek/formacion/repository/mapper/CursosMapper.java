@@ -7,9 +7,8 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.ipartek.formacion.domain.Cursos;
 
-
-
-public class CursosMapper {
+public class CursosMapper  implements RowMapper<Cursos>  {
+	@Override()
 	public Cursos mapRow(ResultSet rs, int numRow) throws SQLException {
 
 		Cursos cursos = new Cursos();

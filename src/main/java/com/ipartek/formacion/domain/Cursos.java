@@ -8,9 +8,7 @@ public class Cursos {
 
 	private String codigo;
 	
-	public Cursos() {
-		// TODO Auto-generated constructor stub
-	}
+	
 
 	public Cursos(long id, String nombre, String codigo) {
 		super();
@@ -20,6 +18,12 @@ public class Cursos {
 	}
 
 	
+
+	public Cursos() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 
 	public long getId() {
 		return id;

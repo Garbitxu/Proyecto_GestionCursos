@@ -41,20 +41,20 @@ public class DAOCursosImpl implements DAOCursos {
 		this.jdbcTemplate = new JdbcTemplate(this.dataSource);
 
 	}
-	private static final String SQL_COGER_TODOS = "SELECT `id`, `nombre`, `codigo` FROM `curso` ORDER BY `id` DESC LIMIT 1000;";
-	private static final String SQL_COGER_ULTIMOS_DIEZ = "SELECT `id`, `nombre`, `codigo` FROM `curso` ORDER BY `id` DESC LIMIT 10;";
-	private static final String SQL_GET_BY_ID = "SELECT `id`, `nombre`, `codigo` FROM `curso` WHERE `id` = ?;";
-	private static final String SQL_INSERTAR = "INSERT INTO `curso` (`nombre`, `codigo`) VALUES (?, ?);";
-	private static final String SQL_ACTUALIZAR = "UPDATE `curso` SET `nombre`= ? , `codigo`= ? WHERE `id`= ? ;";
+	private static final String SQL_COGER_TODOS = "SELECT `id`, `NomCurso`, `CodCurso` FROM `curso` ORDER BY `id` DESC LIMIT 1000;";
+	private static final String SQL_COGER_ULTIMOS_DIEZ = "SELECT `id`, `NomCurso`, `CodCurso` FROM `curso` ORDER BY `id` DESC LIMIT 10;";
+	private static final String SQL_GET_BY_ID = "SELECT `id`, `NomCurso`, `CodCurso` FROM `curso` WHERE `id` = ?;";
+	private static final String SQL_INSERTAR = "INSERT INTO `curso` (`NomCurso`, `CodCurso`) VALUES (?, ?);";
+	private static final String SQL_ACTUALIZAR = "UPDATE `curso` SET `NomCurso`= ? , `CodCurso`= ? WHERE `id`= ? ;";
 	private static final String SQL_ELIMINAR = "DELETE FROM `curso` WHERE `id` = ?;";
 
 	@Override
-	public List<Cursos> cogerTodos(String filtro) {
+	public List<Cursos> cogerTodos(String filter) {
 		ArrayList<Cursos> listado = new ArrayList<Cursos>();
 
 		try {
 
-			if (filtro == null) {
+			if (filter == null) {
 
 				this.LOG.trace("Listar todos los cursos");
 				listado = (ArrayList<Cursos>) this.jdbcTemplate.query(SQL_COGER_TODOS, new CursosMapper());
