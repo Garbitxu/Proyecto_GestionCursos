@@ -9,7 +9,7 @@
 
 <h2>Has llegado al panel de administración. ¡Enhorabuena!</h2>
 
-<a href="/crear">
+<a href="curso/crear">
 <button class="btn btn-primary" type="submit">Crear nuevo curso</button>
 </a>
 <c:choose>
