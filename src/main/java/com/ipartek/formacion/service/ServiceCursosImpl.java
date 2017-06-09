@@ -12,15 +12,14 @@ import com.ipartek.formacion.repository.DAOCursos;
 
 @Service("serviceCursos")
 public class ServiceCursosImpl implements ServiceCursos {
-	
+
 	private final Log LOG = LogFactory.getLog(getClass());
 	@Autowired()
 	private DAOCursos daoCursos;
-	
-	
+
 	@Override
-	public List<Cursos> listado(String filter) {
-		return daoCursos.cogerTodos(filter);
+	public List<Cursos> listado(String filtro) {
+		return daoCursos.cogerTodos(filtro);
 
 	}
 

@@ -26,7 +26,6 @@ import com.ipartek.formacion.repository.mapper.CursosMapper;
 @Repository("DAOCursos")
 public class DAOCursosImpl implements DAOCursos {
 
-	
 	private final Log LOG = LogFactory.getLog(getClass());
 	private static final String ERROR_INESPERADO = "Excepción inesperada";
 
@@ -41,6 +40,7 @@ public class DAOCursosImpl implements DAOCursos {
 		this.jdbcTemplate = new JdbcTemplate(this.dataSource);
 
 	}
+
 	private static final String SQL_COGER_TODOS = "SELECT `id`, `NomCurso`, `CodCurso` FROM `curso` ORDER BY `id` DESC LIMIT 1000;";
 	private static final String SQL_COGER_ULTIMOS_DIEZ = "SELECT `id`, `NomCurso`, `CodCurso` FROM `curso` ORDER BY `id` DESC LIMIT 10;";
 	private static final String SQL_GET_BY_ID = "SELECT `id`, `NomCurso`, `CodCurso` FROM `curso` WHERE `id` = ?;";
@@ -59,7 +59,7 @@ public class DAOCursosImpl implements DAOCursos {
 				this.LOG.trace("Listar todos los cursos");
 				listado = (ArrayList<Cursos>) this.jdbcTemplate.query(SQL_COGER_TODOS, new CursosMapper());
 
-			} 
+			}
 
 		} catch (EmptyResultDataAccessException e) {
 
@@ -76,11 +76,11 @@ public class DAOCursosImpl implements DAOCursos {
 
 	@Override
 	public List<Cursos> cogerUltimosDiez() {
-		ArrayList<Cursos> listado = new ArrayList<Cursos>();
+		ArrayList<Cursos> listando = new ArrayList<Cursos>();
 
 		try {
 
-			listado = (ArrayList<Cursos>) this.jdbcTemplate.query(SQL_COGER_ULTIMOS_DIEZ, new CursosMapper());
+			listando = (ArrayList<Cursos>) this.jdbcTemplate.query(SQL_COGER_ULTIMOS_DIEZ, new CursosMapper());
 
 		} catch (EmptyResultDataAccessException e) {
 
@@ -92,7 +92,7 @@ public class DAOCursosImpl implements DAOCursos {
 
 		}
 
-		return listado;
+		return listando;
 	}
 
 	@Override

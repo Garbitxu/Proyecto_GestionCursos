@@ -1,14 +1,12 @@
 package com.ipartek.formacion.domain;
 
 public class Cursos {
-	
+
 	private long id;
 
 	private String nombre;
 
 	private String codigo;
-	
-	
 
 	public Cursos(long id, String nombre, String codigo) {
 		super();
@@ -17,13 +15,9 @@ public class Cursos {
 		this.codigo = null;
 	}
 
-	
-
 	public Cursos() {
 		// TODO Auto-generated constructor stub
 	}
-
-
 
 	public long getId() {
 		return id;
@@ -53,9 +47,5 @@ public class Cursos {
 	public String toString() {
 		return "Cursos [id=" + id + ", nombre=" + nombre + ", codigo=" + codigo + "]";
 	}
-	
-	
-	
-	
 
 }

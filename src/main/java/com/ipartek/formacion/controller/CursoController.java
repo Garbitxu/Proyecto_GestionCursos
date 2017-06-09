@@ -13,22 +13,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.ipartek.formacion.domain.Cursos;
 import com.ipartek.formacion.service.ServiceCursos;
 
-
-
 @Controller()
 @RequestMapping(value = "/curso")
 public class CursoController {
 
 	private static final String VIEW_ADMIN_INDEX = "admin/index";
-	private static final String VIEW_ADMIN_FORM = "admin/form";
+	private static final String VIEW_ADMIN_FORM = "admin/gestionCursos";
 
 	@Autowired()
 	private ServiceCursos serviceCursos;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String listar(Model model) {
+	public String listado(Model model) {
 
-	
 		model.addAttribute("cursos", this.serviceCursos.listado(null));
 
 		return VIEW_ADMIN_INDEX;
@@ -37,8 +34,6 @@ public class CursoController {
 	@RequestMapping(value = "/edit{id}", method = RequestMethod.GET)
 	public String formularioEditar(@PathVariable int id, Model model) {
 
-	
-
 		model.addAttribute("curso", this.serviceCursos.buscarPorId(id));
 
 		return VIEW_ADMIN_FORM;
@@ -46,7 +41,6 @@ public class CursoController {
 
 	@RequestMapping(value = "/crear", method = RequestMethod.POST)
 	public String crear(@Valid Cursos cursos, BindingResult bindingResult, Model model) {
-
 
 		String msg = null;
 
@@ -67,27 +61,23 @@ public class CursoController {
 
 		} else {
 
-	
-
 		}
 
 		model.addAttribute("cursos", serviceCursos.listado(null));
 		model.addAttribute("msg", msg);
 
-		return VIEW_ADMIN_INDEX;
+		return VIEW_ADMIN_FORM;
 	}
 
-	
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
 	public String eliminar(@PathVariable int id, Model model) {
 
-		
 		String view = "redirect: ../";
 		String msg = "ERROR!! El curso no ha sido eliminado";
 
 		if (serviceCursos.eliminarCursos(id)) {
 			msg = "Curso Eliminado con exito";
-			view = VIEW_ADMIN_INDEX;
+			view = VIEW_ADMIN_FORM;
 
 		} else {
 
