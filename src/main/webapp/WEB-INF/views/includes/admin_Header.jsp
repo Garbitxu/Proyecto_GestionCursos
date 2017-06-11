@@ -12,7 +12,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title><spring:message code="nav.app.name" text="Web App"/></title>
+	<title><spring:message code="nav.app.name" text="Ipartek"/></title>
 	<base href="/formacion/" />
 	
 	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -26,10 +26,6 @@
 </head>
 <body>
 	 <div class="container">
-
-
-
-
 <!-- Static navbar -->
       <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -40,25 +36,22 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><spring:message code="nav.app.name" text="Web App"/></a>
+            <a class="navbar-brand" href="formacion"></a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
           
-          <!-- menu izquierda 
+          <!-- menu izquierda -->
             <ul class="nav navbar-nav">
+            <li class="">
+              	<a href="formacion"><img src="resources/img/logo-ipartek.png"></a>
+              </li>    
               <li class="">
-              	<a href="usuario"><spring:message code="nav.usuario" text="Usuario"/></a>
-              </li>
-              <li>
-              	<a href="receta"><spring:message code="nav.recetas" text="Recetas"/></a>
-              </li>
-              <li>
-              	<a href="ingrediente"><spring:message code="nav.ingrdientes" text="Ingredientes"/></a>
-              </li>             
+              	<a href="admin">Inicio (administrador)</a>
+              </li>           
             </ul>
-          -->
+          
           <!-- search -->
-		  <!-- Filtro para buscar entre todos los cursos 
+		  <!-- Filtro para buscar entre todos los cursos --> 
 			<form class="navbar-form navbar-left">
 				<div class="input-group">
 				<label class="input-group-addon" for="buscador_cursos">
@@ -71,16 +64,10 @@
 						       placeholder="busca el curso que quieras">
 				</label>	
 				</div>				
-			</form>   -->       
+			</form>         
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-
-
-
-
-
-
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
         

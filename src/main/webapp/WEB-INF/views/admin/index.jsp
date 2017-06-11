@@ -1,4 +1,4 @@
-<%@ include file="../includes/header.jsp" %> 
+<%@ include file="../includes/admin_Header.jsp" %> 
 
 <a href="/formacion" >
 <button class="btn btn-primary" type="submit">Volver a la página principal</button>

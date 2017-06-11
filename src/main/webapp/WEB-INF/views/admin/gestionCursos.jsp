@@ -1,4 +1,4 @@
-<%@ include file="../includes/header.jsp"%>
+<%@ include file="../includes/admin_Header.jsp"%>
 
 <h1>Gestiona aquí tus cursos</h1>
 
