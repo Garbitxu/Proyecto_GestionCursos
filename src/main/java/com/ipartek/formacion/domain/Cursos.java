@@ -16,7 +16,10 @@ public class Cursos {
 	}
 
 	public Cursos() {
-		
+		super();
+		this.id = -1;
+		this.nombre = "";
+		this.codigo = null;
 	}
 
 	public long getId() {
