@@ -9,7 +9,7 @@
 
 <h2>Has llegado al panel de administración. ¡Enhorabuena!</h2>
 
-<a href="curso/crear">
+<a href="admin/curso/edit">
 <button class="btn btn-primary" type="submit">Crear nuevo curso</button>
 </a>
 <c:choose>
@@ -31,8 +31,8 @@
 				<td>${c.id}</td>
 				<td>${c.nombre}</td>
 				<td>${c.codigo}</td>
-				<td><span class="glyphicon glyphicon-pencil"></span> 
-				<span class="glyphicon glyphicon-trash"></span></td>
+				<td><a href="admin/curso/edit/${c.id}"><span class="glyphicon glyphicon-pencil"></span></a> 
+				<a href="admin/curso/delete/${c.id}"><span class="glyphicon glyphicon-trash"></span></a></td>
 			</tr>
 		</c:forEach>
 	</tbody>
