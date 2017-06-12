@@ -42,7 +42,7 @@
           <!-- menu izquierda -->
             <ul class="nav navbar-nav">
             <li class="">
-              	<a href=""><img src="resources/img/logo-ipartek.png"></a>
+              	<a href=""><img class="redi-logo" src="resources/img/logo-ipartek.png"></a>
               </li>    
               <li class="">
               	<a href="admin">Inicio (administrador)</a>

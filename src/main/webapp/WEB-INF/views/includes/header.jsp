@@ -40,38 +40,20 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><spring:message code="nav.app.name" text="Web App"/></a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
           
-          <!-- menu izquierda 
+          <!-- menu izquierda !-->
             <ul class="nav navbar-nav">
               <li class="">
-              	<a href="usuario"><spring:message code="nav.usuario" text="Usuario"/></a>
+              	<a href=""><img class="redi-logo" src="resources/img/logo-ipartek.png"></a>
               </li>
               <li>
-              	<a href="receta"><spring:message code="nav.recetas" text="Recetas"/></a>
-              </li>
-              <li>
-              	<a href="ingrediente"><spring:message code="nav.ingrdientes" text="Ingredientes"/></a>
-              </li>             
+              	<a href="admin"><spring:message code="nav.admin" text="Administración"/></a>
+              </li>            
             </ul>
-          -->
-          <!-- search -->
-		  <!-- Filtro para buscar entre todos los cursos 
-			<form class="navbar-form navbar-left">
-				<div class="input-group">
-				<label class="input-group-addon" for="buscador_cursos">
-						<span class="glyphicon glyphicon-search"></span>
-					
-					<input id="buscador_cursos" 
-							   name="buscador_cursos"
-						       type="text" 
-						       class="form-control" 
-						       placeholder="busca el curso que quieras">
-				</label>	
-				</div>				
-			</form>   -->       
+    
+                
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>

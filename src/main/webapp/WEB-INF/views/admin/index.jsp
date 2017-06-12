@@ -47,8 +47,8 @@
 				<td>${c.id}</td>
 				<td>${c.nombre}</td>
 				<td>${c.codigo}</td>
-				<td><a href="admin/curso/edit/${c.id}"><span class="glyphicon glyphicon-pencil"></span></a> 
-				<a href="admin/curso/delete/${c.id}"><span class="glyphicon glyphicon-trash"></span></a></td>
+				<td><a href="admin/curso/edit/${c.id}"><span class="glyphicon glyphicon-pencil text-success"></span></a> 
+				<a href="admin/curso/delete/${c.id}"><span class="glyphicon glyphicon-trash text-danger"></span></a></td>
 			</tr>
 		</c:forEach>
 	</tbody>
