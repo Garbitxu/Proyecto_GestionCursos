@@ -6,7 +6,7 @@ import com.ipartek.formacion.domain.Cursos;
 
 public interface ServiceCursos {
 
-	List<Cursos> listado(String filtro);
+	List<Cursos> listado(String filtro); // filtrar+listar todo
 
 	List<Cursos> listadoUltimosCursos(); // listar ultimo
 
@@ -14,7 +14,7 @@ public interface ServiceCursos {
 
 	boolean crearCursos(Cursos cursos); // crear curso
 
-	boolean modificarCursos(Cursos cursos);
+	boolean modificarCursos(Cursos cursos); // modifica curso
 
-	boolean eliminarCursos(long id);
+	boolean eliminarCursos(long id); // elimina curso
 }

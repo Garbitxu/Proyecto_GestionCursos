@@ -39,32 +39,16 @@
             <a class="navbar-brand" href="formacion"></a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-          
           <!-- menu izquierda -->
             <ul class="nav navbar-nav">
             <li class="">
-              	<a href="formacion"><img src="resources/img/logo-ipartek.png"></a>
+              	<a href=""><img src="resources/img/logo-ipartek.png"></a>
               </li>    
               <li class="">
               	<a href="admin">Inicio (administrador)</a>
               </li>           
             </ul>
-          
-          <!-- search -->
-		  <!-- Filtro para buscar entre todos los cursos --> 
-			<form class="navbar-form navbar-left">
-				<div class="input-group">
-				<label class="input-group-addon" for="buscador_cursos">
-						<span class="glyphicon glyphicon-search"></span>
-					
-					<input id="buscador_cursos" 
-							   name="buscador_cursos"
-						       type="text" 
-						       class="form-control" 
-						       placeholder="busca el curso que quieras">
-				</label>	
-				</div>				
-			</form>         
+     
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>

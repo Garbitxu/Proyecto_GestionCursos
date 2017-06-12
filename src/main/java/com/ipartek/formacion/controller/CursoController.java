@@ -2,8 +2,6 @@ package com.ipartek.formacion.controller;
 
 import javax.validation.Valid;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,15 +10,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
 import com.ipartek.formacion.domain.Cursos;
 import com.ipartek.formacion.service.ServiceCursos;
 
+/**
+ * Controlador de cursos
+ * 
+ * RequestMapping = URI
+ * 
+ * @author Garbi
+ *
+ */
 @Controller()
 @RequestMapping(value = "admin/curso")
+
 public class CursoController {
 
-
+	/**
+	 * Variables finales
+	 */
 	private static final String VIEW_ADMIN_INDEX = "admin/index";
 	private static final String VIEW_ADMIN_FORM = "admin/gestionCursos";
 
@@ -34,7 +42,7 @@ public class CursoController {
 
 		return VIEW_ADMIN_INDEX;
 	}
-	
+
 	@RequestMapping(value = "/edit", method = RequestMethod.GET)
 	public String irFormularioNuevo(Model model) {
 
@@ -64,7 +72,7 @@ public class CursoController {
 				serviceCursos.modificarCursos(cursos);
 				msg = "GENIAL!! Has modificado el curso con éxito :D";
 			}
-		} 
+		}
 		model.addAttribute("cursos", serviceCursos.listado(null));
 		model.addAttribute("msg", msg);
 		return VIEW_ADMIN_INDEX;

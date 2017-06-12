@@ -47,18 +47,22 @@ public class DAOCursosImpl implements DAOCursos {
 	private static final String SQL_INSERTAR = "INSERT INTO `curso` (`NomCurso`, `CodCurso`) VALUES (?, ?);";
 	private static final String SQL_ACTUALIZAR = "UPDATE `curso` SET `NomCurso`= ? , `CodCurso`= ? WHERE `id`= ? ;";
 	private static final String SQL_ELIMINAR = "DELETE FROM `curso` WHERE `id` = ?;";
+	private static final String SQL_FILTRO = "SELECT `id`, `NomCurso`, `CodCurso` FROM `curso` WHERE `NomCurso` LIKE '%' ? '%' ORDER BY `NomCurso` DESC;";
 
-	@Override
-	public List<Cursos> cogerTodos(String filter) {
+	@Override()
+	public List<Cursos> cogerTodos(String filtro) {
 		ArrayList<Cursos> listado = new ArrayList<Cursos>();
 
 		try {
 
-			if (filter == null) {
+			if (filtro == null) {
 
 				this.LOG.trace("Listar todos los cursos");
 				listado = (ArrayList<Cursos>) this.jdbcTemplate.query(SQL_COGER_TODOS, new CursosMapper());
 
+			} else {
+				listado = (ArrayList<Cursos>) this.jdbcTemplate.query(SQL_FILTRO, new Object[] { filtro },
+						new CursosMapper());
 			}
 
 		} catch (EmptyResultDataAccessException e) {
@@ -74,7 +78,7 @@ public class DAOCursosImpl implements DAOCursos {
 		return listado;
 	}
 
-	@Override
+	@Override()
 	public List<Cursos> cogerUltimosDiez() {
 		ArrayList<Cursos> listando = new ArrayList<Cursos>();
 
@@ -95,7 +99,7 @@ public class DAOCursosImpl implements DAOCursos {
 		return listando;
 	}
 
-	@Override
+	@Override()
 	public Cursos getById(long id) {
 		Cursos cursos = new Cursos();
 
@@ -116,7 +120,7 @@ public class DAOCursosImpl implements DAOCursos {
 		return cursos;
 	}
 
-	@Override
+	@Override()
 	public boolean insertar(final Cursos cursos) {
 		boolean resul = false;
 
@@ -148,7 +152,7 @@ public class DAOCursosImpl implements DAOCursos {
 		return resul;
 	}
 
-	@Override
+	@Override()
 	public boolean actualizar(Cursos cursos) {
 		boolean resul = false;
 
@@ -170,7 +174,7 @@ public class DAOCursosImpl implements DAOCursos {
 		return resul;
 	}
 
-	@Override
+	@Override()
 	public boolean eliminar(long id) {
 		boolean resul = false;
 

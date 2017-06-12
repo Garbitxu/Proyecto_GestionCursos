@@ -6,7 +6,23 @@
 
 
 <h1>Hello world!</h1>
-
+          
+          <!-- search -->
+		  <!-- Filtro para buscar entre todos los cursos --> 
+			<form class="navbar-form navbar-left">
+				<div class="input-group">
+				<label class="input-group-addon" for="buscador_cursos">
+						<span class="glyphicon glyphicon-search"></span>
+					
+					<input id="buscador_cursos" 
+							   name="buscador_cursos"
+						       type="text" 
+						       class="form-control" 
+						       placeholder="busca el curso que quieras">
+				</label>	
+				</div>				
+			</form>
+		 <!-- / filtro search -->
 <h2>Has llegado al panel de administración. ¡Enhorabuena!</h2>
 
 <a href="admin/curso/edit">
@@ -43,6 +59,6 @@
 	</c:otherwise>
 </c:choose>
 <p>Sube tu archivo .CSV aquí.</p>
-<p>Crear nuevo curso</p>
+
 
 <%@ include file="../includes/footer.jsp" %> 
