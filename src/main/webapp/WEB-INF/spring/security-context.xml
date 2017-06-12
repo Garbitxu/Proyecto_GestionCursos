@@ -8,6 +8,15 @@
 	<http auto-config="true">
 		<intercept-url pattern="/admin*" access="ROLE_USER" />
 		<intercept-url pattern="/admin/*" access="ROLE_USER" />
+		<form-login login-page="/formularioLogin.jsp"
+ username-parameter="usuario"
+ login-processing-url="/login"
+ password-parameter="clave"
+ authentication-failure-url="/error.jsp"/>
+ 		<logout logout-success-url="/"
+			  	logout-url="/desconectar"
+			 	delete-cookies="JSESSIONID" />
+		
 	</http>
 	<authentication-manager alias="authenticationManager">
 		<authentication-provider>
