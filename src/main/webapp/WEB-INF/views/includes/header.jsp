@@ -14,7 +14,7 @@
 	<meta charset="UTF-8">
 	<title><spring:message code="nav.app.name" text="Web App"/></title>
 	<base href="/formacion/" />
-	
+	<link href="https://fonts.googleapis.com/css?family=Righteous|Satisfy|Lobster|Roboto+Slab" rel="stylesheet">
 	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -49,7 +49,7 @@
               	<a href=""><img class="redi-logo" src="resources/img/logo-ipartek.png"></a>
               </li>
               <li>
-              	<a href="admin"><spring:message code="nav.admin" text="Administración"/></a>
+              	<a href="admin" class="bajar"><spring:message code="nav.admin" text="Administración"/></a>
               </li>            
             </ul>
     

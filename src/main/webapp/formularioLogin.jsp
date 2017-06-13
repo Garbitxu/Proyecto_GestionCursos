@@ -1,6 +1,6 @@
-<%@ include file="WEB-INF/views/includes/header.jsp" %> 
+<%@ include file="WEB-INF/views/includes/login_header.jsp" %> 
 
-<div class="login-fondo">
+<div class="fondo">
 
 	<form action="login" method="post">
 <p>
@@ -17,4 +17,4 @@
 </form>
 
 </div>
-<%@ include file="WEB-INF/views/includes/footer.jsp" %> 
+<%@ include file="WEB-INF/views/includes/footer_login.jsp" %> 

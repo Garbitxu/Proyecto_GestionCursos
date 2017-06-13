@@ -1,0 +1,45 @@
+
+.navbar-default{
+	background-color:#FFF;
+	opacity: 0.85;
+    filter: alpha(opacity=85); /* For IE8 and earlier */
+}
+
+html{
+	background-size:cover;
+    background-image:url('../img/login-error.jpg');
+	padding: 0;
+	margin-right:0;
+	height:100%;
+
+}
+
+.container {
+	max-width:100%;
+	margin-right:0;
+	color:#000;
+
+}
+
+body {
+	opacity: 0.90;
+    filter: alpha(opacity=90); /* For IE8 and earlier */
+    height:390px;
+    width:400px;
+    position: absolute;
+    right:40%;
+    top: 28%;
+    border-radius: 25px;
+    text-align: center;
+    font-family: verdana;
+}
+
+.redi-logo{
+	position:relative;
+	top:20px;
+}
+
+p {
+	color:red;
+	font-weight: bold;
+}

@@ -1,22 +1,23 @@
 
-<%@ include file="WEB-INF/views/includes/header.jsp" %> 
+<%@ include file="WEB-INF/views/includes/logout_header.jsp" %> 
 
 
 	<div id="conexion">
 		
 		<form action="conexion" method="post">
-			
-			<h1 class="box-header">Conectarse</h1>
-			
+			<a href=""><img class="redi-logo" src="resources/img/logo-ipartek.png"></a>
+			<br><br><br>
 			<p>Lo sentimos, pero el Usuario y/o contraseña introducidos no son correctos.</p>
-			 
+			 <br>
 			<label for="usuario">Usuario</label>
-			<input type="text" id="usuario" name="usuario">
+			<input type="text" id="usuario" name="usuario"><br>
 			<label for="clave">Contraseña</label>
 			<input type="password" id="clave" name="clave">
-			<br>
+			<br><br>
 			<input type="submit" value="validar">
-
-		</form>
+		</form><br>
+	<a href="/formacion" >
+<button class="btn btn-primary" type="submit">Volver a la página principal</button>
+</a>
 	</div>
-<%@ include file="WEB-INF/views/includes/footer.jsp" %> 
+<%@ include file="WEB-INF/views/includes/footer_login.jsp" %> 

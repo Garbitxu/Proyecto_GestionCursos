@@ -1,27 +1,19 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-
-
 <%@ page session="false" %>
 
 <!doctype html>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title><spring:message code="nav.app.name" text="Ipartek"/></title>
+	<title><spring:message code="nav.app.name" text="Login"/></title>
 	<base href="/formacion/" />
-<link href="https://fonts.googleapis.com/css?family=Righteous|Satisfy|Lobster|Roboto+Slab" rel="stylesheet">
-
+	
 	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	
 	<!-- Custom -->
-	<link href="resources/css/custom.css" rel="stylesheet">	
+	<link href="resources/css/login.css" rel="stylesheet">	
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
 	
 </head>
@@ -37,28 +29,23 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="formacion"></a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-          <!-- menu izquierda -->
+          
+          <!-- menu izquierda !-->
             <ul class="nav navbar-nav">
-            <li class="">
-              	<a href=""><img class="redi-logo" src="resources/img/logo-ipartek.png"></a>
-              </li>    
               <li class="">
-              	<a href="admin" class="bajar agrandar">Inicio (administrador)</a>
-              </li>           
+              	<a href=""><img class="redi-logo" src="resources/img/logo-ipartek.png"></a>
+              </li>
+              <li>
+              	<a href="admin"><spring:message code="nav.admin" text="Administración"/></a>
+              </li>            
             </ul>
-     <!-- menu derecha -->  
-            <ul class="nav navbar-nav navbar-right">
-              <li class="active">
-              	<a href="desconectar" class="bajar"><p>Desconectarse</p></a>
-              	</li>
-            </ul>
+    
+                
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-      <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
+
         
       

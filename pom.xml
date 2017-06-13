@@ -134,7 +134,7 @@
    			 <groupId>org.hibernate</groupId>
    			 <artifactId>hibernate-entitymanager</artifactId>
    			 <version>4.1.12.Final</version>
-		</dependency>
+		</dependency>	
 		<!-- JSON - Java Script Object Notation -->
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
