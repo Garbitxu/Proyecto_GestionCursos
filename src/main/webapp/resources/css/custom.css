@@ -1,10 +1,6 @@
 /* estilos generales */
 
 html{
-	background-size:cover;
-    background-image:url('../img/red.jpg');
-	padding: 0;
-	margin-right:0;
 	height:100%;
 }
 
@@ -49,6 +45,20 @@ tbody>tr:hover {
 	background-color:#E0F2F7 !important;
 	font-family: 'Righteous', cursive;
 }
+
+/* filtro */
+
+.input-group-addon:last-child {
+	border-radius:30px !important;
+	background-color: #045FB4;
+}
+
+#buscador_cursos {
+	top: -9px;
+	border-radius:30px !important;
+	
+}
+
 /*
 Navegacion
 */

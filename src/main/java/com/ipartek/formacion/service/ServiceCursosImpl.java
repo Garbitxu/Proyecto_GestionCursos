@@ -1,5 +1,6 @@
 package com.ipartek.formacion.service;
 
+import java.io.FileReader;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -10,6 +11,8 @@ import org.springframework.stereotype.Service;
 import com.ipartek.formacion.domain.Cursos;
 import com.ipartek.formacion.repository.DAOCursos;
 
+import au.com.bytecode.opencsv.CSVReader;
+
 @Service("serviceCursos")
 public class ServiceCursosImpl implements ServiceCursos {
 
@@ -17,40 +20,53 @@ public class ServiceCursosImpl implements ServiceCursos {
 	@Autowired()
 	private DAOCursos daoCursos;
 
-	@Override
+	@Override()
 	public List<Cursos> listado(String filtro) {
 		return daoCursos.cogerTodos(filtro);
-
 	}
 
-	@Override
+	@Override()
 	public List<Cursos> listadoUltimosCursos() {
-		// TODO Auto-generated method stub
 		return daoCursos.cogerUltimosDiez();
 	}
 
-	@Override
+	@Override()
 	public Cursos buscarPorId(long id) {
-		// TODO Auto-generated method stub
 		return daoCursos.getById(id);
 	}
 
-	@Override
+	@Override()
 	public boolean crearCursos(Cursos cursos) {
-		// TODO Auto-generated method stub
 		return daoCursos.insertar(cursos);
 	}
 
-	@Override
+	@Override()
 	public boolean modificarCursos(Cursos cursos) {
-		// TODO Auto-generated method stub
 		return daoCursos.actualizar(cursos);
 	}
 
-	@Override
+	@Override()
 	public boolean eliminarCursos(long id) {
-		// TODO Auto-generated method stub
 		return daoCursos.eliminar(id);
+	}
+	
+	@Override()
+	public void migracion() throws Exception {
+		int cont = 0;
+		CSVReader lector = new CSVReader(new FileReader("c:\\cursos.csv"),';');
+	     List<String[]> misEntradas = lector.readAll();
+	     for (String[] linea: misEntradas) {
+	    	 if(cont!=0){
+		    	 Cursos cursos = new Cursos();
+		    	 cursos.setNombre(linea[1]);
+		    	 cursos.setCodigo(linea[8]);
+		    	 if(!"".equals(cursos.getCodigo()) && !"".equals(cursos.getNombre())){
+		    		 this.daoCursos.anadir(cursos);
+		    	 }
+	    	 }
+	    	 cont++;
+		}
+	     lector.close();
 	}
 
 }

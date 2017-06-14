@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ipartek.formacion.domain.Cursos;
+import com.ipartek.formacion.domain.Mensajes;
 import com.ipartek.formacion.service.ServiceCursos;
 
 @Controller
@@ -22,7 +23,7 @@ import com.ipartek.formacion.service.ServiceCursos;
 public class ApiCursoController {
 
 	private static final Logger LOG = LoggerFactory.getLogger(ApiCursoController.class);
-
+	private Mensajes msg = new Mensajes();
 	@Autowired()
 	private ServiceCursos serviceCurso;
 

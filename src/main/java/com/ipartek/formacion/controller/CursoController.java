@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.ipartek.formacion.domain.Cursos;
+import com.ipartek.formacion.domain.Mensajes;
 import com.ipartek.formacion.service.ServiceCursos;
 
 /**
@@ -25,6 +26,8 @@ import com.ipartek.formacion.service.ServiceCursos;
 @RequestMapping(value = "admin/curso")
 
 public class CursoController {
+	
+	private Mensajes msg = new Mensajes();
 
 	/**
 	 * Variables finales
@@ -55,6 +58,8 @@ public class CursoController {
 	public String formularioEditar(@PathVariable int id, Model model) {
 
 		model.addAttribute("cursos", this.serviceCursos.buscarPorId(id));
+		this.msg.setDescripcion("Curso editado con éxito");
+		this.msg.setClase(Mensajes.CLASE_SUCCESS);
 
 		return VIEW_ADMIN_FORM;
 	}
@@ -62,15 +67,18 @@ public class CursoController {
 	@RequestMapping(value = "/crear", method = RequestMethod.POST)
 	public String crear(@Valid Cursos cursos, BindingResult bindingResult, Model model) {
 
-		String msg = null;
 		// validamos los datos del formulario
 		if (!bindingResult.hasErrors()) {
 			if (cursos.getId() == -1) {
 				serviceCursos.crearCursos(cursos);
-				msg = "GENIAL!! El nuevo curso se ha creado con éxito ;)";
+
+				this.msg.setDescripcion("GENIAL!! El nuevo curso se ha creado con éxito ;)");
+				this.msg.setClase(Mensajes.CLASE_SUCCESS);
 			} else {
 				serviceCursos.modificarCursos(cursos);
-				msg = "GENIAL!! Has modificado el curso con éxito :D";
+
+				this.msg.setDescripcion("GENIAL!! Has modificado el curso con éxito :D");
+				this.msg.setClase(Mensajes.CLASE_SUCCESS);
 			}
 		}
 		model.addAttribute("cursos", serviceCursos.listado(null));
@@ -82,19 +90,24 @@ public class CursoController {
 	public String eliminar(@PathVariable int id, Model model) {
 
 		String view = "redirect: ../";
-		String msg = "ERROR!! El curso no ha sido eliminado";
 
+		
 		if (serviceCursos.eliminarCursos(id)) {
-			msg = "Curso Eliminado con exito";
+
+			this.msg.setDescripcion("GENIAL!! Has eliminado el curso con éxito :D");
+			this.msg.setClase(Mensajes.CLASE_SUCCESS);
 			view = VIEW_ADMIN_INDEX;
 
 		} else {
 
 			view = "redirect: ../edit/" + id;
+			this.msg.setDescripcion("ERROR!!! No se ha podido eliminar el curso");
+			this.msg.setClase(Mensajes.CLASE_DANGER);
+
 		}
 
 		model.addAttribute("cursos", serviceCursos.listado(null));
-		model.addAttribute("msg", msg);
+
 		return view;
 	}
 }

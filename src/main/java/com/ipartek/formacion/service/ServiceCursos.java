@@ -17,4 +17,6 @@ public interface ServiceCursos {
 	boolean modificarCursos(Cursos cursos); // modifica curso
 
 	boolean eliminarCursos(long id); // elimina curso
+	
+	void migracion() throws Exception; //migracion csv
 }

@@ -22,4 +22,5 @@ public interface DAOCursos {
 
 	boolean eliminar(long id);
 
+	boolean anadir(final Cursos cursos);
 }

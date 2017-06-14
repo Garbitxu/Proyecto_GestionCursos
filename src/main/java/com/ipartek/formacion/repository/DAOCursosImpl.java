@@ -48,7 +48,8 @@ public class DAOCursosImpl implements DAOCursos {
 	private static final String SQL_ACTUALIZAR = "UPDATE `curso` SET `NomCurso`= ? , `CodCurso`= ? WHERE `id`= ? ;";
 	private static final String SQL_ELIMINAR = "DELETE FROM `curso` WHERE `id` = ?;";
 	private static final String SQL_FILTRO = "SELECT `id`, `NomCurso`, `CodCurso` FROM `curso` WHERE `NomCurso` LIKE '%' ? '%' ORDER BY `NomCurso` DESC;";
-
+	private static final String SQL_ANADIR_MIGRACION = "INSERT INTO `cursos` (`nombre`, `codigo`) VALUES (?,?);";
+	
 	@Override()
 	public List<Cursos> cogerTodos(String filtro) {
 		ArrayList<Cursos> listado = new ArrayList<Cursos>();
@@ -61,6 +62,7 @@ public class DAOCursosImpl implements DAOCursos {
 				listado = (ArrayList<Cursos>) this.jdbcTemplate.query(SQL_COGER_TODOS, new CursosMapper());
 
 			} else {
+				this.LOG.trace("Filtrado de cursos");
 				listado = (ArrayList<Cursos>) this.jdbcTemplate.query(SQL_FILTRO, new Object[] { filtro },
 						new CursosMapper());
 			}
@@ -196,6 +198,29 @@ public class DAOCursosImpl implements DAOCursos {
 		}
 
 		return resul;
+	}
+	
+	@Override()
+	public boolean anadir(final Cursos cursos) {
+		boolean insertado = false;
+		int lineasInsertadas = 0;
+		KeyHolder keyHolder = new GeneratedKeyHolder();
+		lineasInsertadas = this.jdbcTemplate.update(new PreparedStatementCreator() {
+			@Override()
+			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+				PreparedStatement prepared = connection.prepareStatement(SQL_ANADIR_MIGRACION,
+						Statement.RETURN_GENERATED_KEYS);
+				prepared.setString(1, cursos.getNombre());
+				prepared.setString(2, cursos.getCodigo());
+				return prepared;
+			}
+		}, keyHolder);
+		if (lineasInsertadas != 0) {
+			insertado = true;
+			cursos.setId(keyHolder.getKey().intValue());
+		}
+
+		return insertado;
 	}
 
 }

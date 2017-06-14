@@ -8,9 +8,10 @@
 <h1>¡Bienvenido administrador!</h1>
           
           <h2>Aquí puedes ver y gestionar todos tus cursos.</h2>
+          <br><br>
           <!-- search -->
 		  <!-- Filtro para buscar entre todos los cursos --> 
-			<form class="navbar-form navbar-left">
+			<form class="form-horizontal">
 				<div class="input-group">
 				<label class="input-group-addon" for="buscador_cursos">
 						<span class="glyphicon glyphicon-search"></span>
@@ -23,10 +24,15 @@
 				</label>	
 				</div>				
 			</form>
+					<br><br>
+			<a href="admin/migracion"><button class="btn btn-primary return" type="submit">Sube tu archivo CSV aqui</button></a>
+
+			
 		 <!-- / filtro search -->
 <a href="admin/curso/edit">
 <button class="btn btn-primary" type="submit">Crear nuevo curso</button>
 </a>
+<br><br>
 <c:choose>
 	<c:when test="${fn:length(cursos) != 0}">
 
@@ -57,7 +63,9 @@
 		<p>No tenemos ningún curso registrado..</p>
 	</c:otherwise>
 </c:choose>
-<p>Sube tu archivo .CSV aquí.</p>
+
+
+
 
 
 <%@ include file="../includes/footer.jsp" %> 

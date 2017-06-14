@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.ipartek.formacion.domain.Mensajes;
 import com.ipartek.formacion.service.ServiceCursos;
 
 /**
@@ -19,7 +20,7 @@ import com.ipartek.formacion.service.ServiceCursos;
 public class HomeController {
 
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-
+	private Mensajes msg = new Mensajes();
 	@Autowired()
 	private ServiceCursos serviceCursos;
 
