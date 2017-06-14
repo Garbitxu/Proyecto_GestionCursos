@@ -2,6 +2,10 @@
 
 <h1>Gestiona aquí tus cursos</h1>
 
+<a href="/formacion" >
+<button class="btn btn-primary return" type="submit">Volver a la página principal</button>
+</a>
+<br><br>
 	<form:form action="admin/curso/crear" modelAttribute="cursos">
 			
 			<form:hidden path="id"/>

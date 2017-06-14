@@ -5,8 +5,9 @@
 </a>
 
 
-<h1>Hello world!</h1>
+<h1>¡Bienvenido administrador!</h1>
           
+          <h2>Aquí puedes ver y gestionar todos tus cursos.</h2>
           <!-- search -->
 		  <!-- Filtro para buscar entre todos los cursos --> 
 			<form class="navbar-form navbar-left">
@@ -23,8 +24,6 @@
 				</div>				
 			</form>
 		 <!-- / filtro search -->
-<h2>Has llegado al panel de administración. ¡Enhorabuena!</h2>
-
 <a href="admin/curso/edit">
 <button class="btn btn-primary" type="submit">Crear nuevo curso</button>
 </a>
